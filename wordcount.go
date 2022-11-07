@@ -7,6 +7,10 @@ import (
 )
 
 func main() {
+	if len(os.Args) != 2 {
+		fmt.Println("incorrect input. usage: ./wordcount 'text'")
+		os.Exit(1)
+	}
 	words := os.Args[1]
 	split := bytes.Split([]byte(words), []byte(" "))
 	count := 0
